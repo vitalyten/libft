@@ -1,29 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vtenigin <vtenigin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/09/22 17:37:55 by vtenigin          #+#    #+#             */
-/*   Updated: 2016/09/24 16:01:27 by vtenigin         ###   ########.fr       */
+/*   Created: 2016/09/23 21:29:49 by vtenigin          #+#    #+#             */
+/*   Updated: 2016/09/26 11:05:49 by vtenigin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcat(char *s1, char *s2)
+#include <string.h>
+
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	int i;
-	int j;
+	size_t	i;
 
 	i = 0;
-	j = 0;
-	while (s1[i])
-		i++;
-	while (s2[j])
+	while (i < n)
 	{
-		s1[i + j] = s2[j];
-		j++;
+		if (((unsigned char *)s1)[i] != ((unsigned char *)s2)[i])
+			return (((unsigned char *)s1)[i] - ((unsigned char *)s2)[i]);
+		i++;
 	}
-	s1[i + j] = '\0';
-	return (s1);
+	return (0);
 }

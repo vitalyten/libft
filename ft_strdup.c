@@ -1,29 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vtenigin <vtenigin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/09/22 17:37:55 by vtenigin          #+#    #+#             */
-/*   Updated: 2016/09/24 16:01:27 by vtenigin         ###   ########.fr       */
+/*   Created: 2016/09/24 12:25:50 by vtenigin          #+#    #+#             */
+/*   Updated: 2016/09/24 16:05:08 by vtenigin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcat(char *s1, char *s2)
-{
-	int i;
-	int j;
+#include <stdlib.h>
+#include "libft.h"
 
+char	*ft_strdup(const char *src)
+{
+	unsigned int	i;
+	size_t			len;
+	char			*ret;
+
+	len = ft_strlen(src);
+	if (!(ret = (char *)malloc(sizeof(char) * len + 1)))
+		return (NULL);
 	i = 0;
-	j = 0;
-	while (s1[i])
-		i++;
-	while (s2[j])
+	while (i < len)
 	{
-		s1[i + j] = s2[j];
-		j++;
+		ret[i] = src[i];
+		i++;
 	}
-	s1[i + j] = '\0';
-	return (s1);
+	ret[i] = '\0';
+	return (ret);
 }

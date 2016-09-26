@@ -1,29 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vtenigin <vtenigin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/09/22 17:37:55 by vtenigin          #+#    #+#             */
-/*   Updated: 2016/09/24 16:01:27 by vtenigin         ###   ########.fr       */
+/*   Created: 2016/09/23 17:57:34 by vtenigin          #+#    #+#             */
+/*   Updated: 2016/09/24 17:23:11 by vtenigin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcat(char *s1, char *s2)
-{
-	int i;
-	int j;
+#include <string.h>
 
+char	*ft_strstr(const char *s1, const char *s2)
+{
+	int		i;
+	int		j;
+	char	*src;
+
+	src = (char *)s1;
 	i = 0;
-	j = 0;
-	while (s1[i])
-		i++;
-	while (s2[j])
+	if (!*s2)
+		return (src);
+	while (src[i])
 	{
-		s1[i + j] = s2[j];
-		j++;
+		j = 0;
+		while (src[i + j] == s2[j])
+		{
+			if (s2[j + 1] == '\0')
+				return (src + i);
+			j++;
+		}
+		i++;
 	}
-	s1[i + j] = '\0';
-	return (s1);
+	return (NULL);
 }

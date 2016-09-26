@@ -1,29 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vtenigin <vtenigin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/09/22 17:37:55 by vtenigin          #+#    #+#             */
-/*   Updated: 2016/09/24 16:01:27 by vtenigin         ###   ########.fr       */
+/*   Created: 2016/09/23 17:46:02 by vtenigin          #+#    #+#             */
+/*   Updated: 2016/09/24 17:25:10 by vtenigin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcat(char *s1, char *s2)
+int	ft_strcmp(const char *s1, const char *s2)
 {
-	int i;
-	int j;
-
-	i = 0;
-	j = 0;
-	while (s1[i])
-		i++;
-	while (s2[j])
+	while (*s1 && *s1 == *s2)
 	{
-		s1[i + j] = s2[j];
-		j++;
+		s1++;
+		s2++;
 	}
-	s1[i + j] = '\0';
-	return (s1);
+	return ((unsigned char)*s1 - (unsigned char)*s2);
 }

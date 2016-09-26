@@ -1,29 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_memccpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vtenigin <vtenigin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/09/22 17:37:55 by vtenigin          #+#    #+#             */
-/*   Updated: 2016/09/24 16:01:27 by vtenigin         ###   ########.fr       */
+/*   Created: 2016/09/24 14:29:56 by vtenigin          #+#    #+#             */
+/*   Updated: 2016/09/24 16:54:21 by vtenigin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcat(char *s1, char *s2)
-{
-	int i;
-	int j;
+#include <string.h>
 
+void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
+{
+	size_t	i;
+	char	*tdst;
+	char	*tsrc;
+
+	tdst = (char *)dst;
+	tsrc = (char *)src;
 	i = 0;
-	j = 0;
-	while (s1[i])
-		i++;
-	while (s2[j])
+	while (i < n)
 	{
-		s1[i + j] = s2[j];
-		j++;
+		tdst[i] = tsrc[i];
+		if ((char)c == tdst[i])
+			return (void *)&tdst[i + 1];
+		i++;
 	}
-	s1[i + j] = '\0';
-	return (s1);
+	return (NULL);
 }

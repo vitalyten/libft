@@ -1,29 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vtenigin <vtenigin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/09/22 17:37:55 by vtenigin          #+#    #+#             */
-/*   Updated: 2016/09/24 16:01:27 by vtenigin         ###   ########.fr       */
+/*   Created: 2016/09/24 14:00:40 by vtenigin          #+#    #+#             */
+/*   Updated: 2016/09/24 17:37:09 by vtenigin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcat(char *s1, char *s2)
+int	ft_atoi(const char *str)
 {
-	int i;
-	int j;
+	int res;
+	int neg;
 
-	i = 0;
-	j = 0;
-	while (s1[i])
-		i++;
-	while (s2[j])
+	res = 0;
+	neg = 1;
+	if (str)
 	{
-		s1[i + j] = s2[j];
-		j++;
+		while (*str == ' ' || *str == '\t' || *str == '\n' || *str == '\r'
+			|| *str == '\f' || *str == '\v')
+			str++;
+		if (*str == '-')
+		{
+			neg = -1;
+			str++;
+		}
+		else if (*str == '+')
+			str++;
+		while (*str >= '0' && *str <= '9')
+		{
+			res *= 10;
+			res += *str - '0';
+			str++;
+		}
 	}
-	s1[i + j] = '\0';
-	return (s1);
+	return (neg * res);
 }

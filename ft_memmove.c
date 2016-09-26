@@ -1,29 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vtenigin <vtenigin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/09/22 17:37:55 by vtenigin          #+#    #+#             */
-/*   Updated: 2016/09/24 16:01:27 by vtenigin         ###   ########.fr       */
+/*   Created: 2016/09/23 18:24:48 by vtenigin          #+#    #+#             */
+/*   Updated: 2016/09/24 18:11:41 by vtenigin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcat(char *s1, char *s2)
-{
-	int i;
-	int j;
+#include <stdlib.h>
 
-	i = 0;
-	j = 0;
-	while (s1[i])
-		i++;
-	while (s2[j])
+void	*ft_memmove(void *dst, const void *src, size_t len)
+{
+	size_t i;
+
+	if (len == 0)
+		return (dst);
+	if (src > dst)
 	{
-		s1[i + j] = s2[j];
-		j++;
+		i = 0;
+		while (i < len)
+		{
+			((char *)dst)[i] = ((char *)src)[i];
+			i++;
+		}
 	}
-	s1[i + j] = '\0';
-	return (s1);
+	else
+	{
+		i = len;
+		while (i-- > 0)
+			((char *)dst)[i] = ((char *)src)[i];
+	}
+	return (dst);
 }
