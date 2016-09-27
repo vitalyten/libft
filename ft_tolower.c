@@ -6,9 +6,11 @@
 /*   By: vtenigin <vtenigin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/23 11:21:34 by vtenigin          #+#    #+#             */
-/*   Updated: 2016/09/23 11:22:16 by vtenigin         ###   ########.fr       */
+/*   Updated: 2016/09/26 18:06:56 by vtenigin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_tolower(int c)
 {

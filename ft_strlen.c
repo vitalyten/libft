@@ -6,11 +6,11 @@
 /*   By: vtenigin <vtenigin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/22 16:14:12 by vtenigin          #+#    #+#             */
-/*   Updated: 2016/09/22 16:21:28 by vtenigin         ###   ########.fr       */
+/*   Updated: 2016/09/26 18:05:59 by vtenigin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
 size_t	ft_strlen(const char *s)
 {

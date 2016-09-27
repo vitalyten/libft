@@ -6,9 +6,11 @@
 /*   By: vtenigin <vtenigin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/23 10:40:55 by vtenigin          #+#    #+#             */
-/*   Updated: 2016/09/23 11:05:26 by vtenigin         ###   ########.fr       */
+/*   Updated: 2016/09/26 17:55:06 by vtenigin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_isprint(int c)
 {

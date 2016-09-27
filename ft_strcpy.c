@@ -6,9 +6,11 @@
 /*   By: vtenigin <vtenigin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/22 17:08:34 by vtenigin          #+#    #+#             */
-/*   Updated: 2016/09/22 17:11:37 by vtenigin         ###   ########.fr       */
+/*   Updated: 2016/09/26 18:05:42 by vtenigin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 char	*ft_strcpy(char *dst, const char *src)
 {

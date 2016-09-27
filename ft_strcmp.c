@@ -6,9 +6,11 @@
 /*   By: vtenigin <vtenigin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/23 17:46:02 by vtenigin          #+#    #+#             */
-/*   Updated: 2016/09/24 17:25:10 by vtenigin         ###   ########.fr       */
+/*   Updated: 2016/09/26 18:05:35 by vtenigin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_strcmp(const char *s1, const char *s2)
 {

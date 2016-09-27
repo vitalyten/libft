@@ -6,11 +6,11 @@
 /*   By: vtenigin <vtenigin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/22 21:31:22 by vtenigin          #+#    #+#             */
-/*   Updated: 2016/09/22 21:37:36 by vtenigin         ###   ########.fr       */
+/*   Updated: 2016/09/26 18:06:08 by vtenigin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
 char	*ft_strncat(char *s1, const char *s2, size_t n)
 {

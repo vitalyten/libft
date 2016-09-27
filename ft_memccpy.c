@@ -6,11 +6,11 @@
 /*   By: vtenigin <vtenigin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/24 14:29:56 by vtenigin          #+#    #+#             */
-/*   Updated: 2016/09/24 16:54:21 by vtenigin         ###   ########.fr       */
+/*   Updated: 2016/09/26 17:56:28 by vtenigin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
 void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 {

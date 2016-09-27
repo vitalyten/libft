@@ -6,11 +6,11 @@
 /*   By: vtenigin <vtenigin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/23 14:41:49 by vtenigin          #+#    #+#             */
-/*   Updated: 2016/09/23 15:27:17 by vtenigin         ###   ########.fr       */
+/*   Updated: 2016/09/26 17:53:54 by vtenigin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
 void	ft_bzero(void *s, size_t n)
 {

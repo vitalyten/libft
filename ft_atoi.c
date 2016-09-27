@@ -6,9 +6,11 @@
 /*   By: vtenigin <vtenigin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/24 14:00:40 by vtenigin          #+#    #+#             */
-/*   Updated: 2016/09/24 17:37:09 by vtenigin         ###   ########.fr       */
+/*   Updated: 2016/09/26 17:54:22 by vtenigin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_atoi(const char *str)
 {

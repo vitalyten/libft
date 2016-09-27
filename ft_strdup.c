@@ -6,11 +6,10 @@
 /*   By: vtenigin <vtenigin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/24 12:25:50 by vtenigin          #+#    #+#             */
-/*   Updated: 2016/09/24 16:05:08 by vtenigin         ###   ########.fr       */
+/*   Updated: 2016/09/26 18:05:50 by vtenigin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
 char	*ft_strdup(const char *src)

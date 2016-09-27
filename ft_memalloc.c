@@ -1,30 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_memalloc.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vtenigin <vtenigin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/09/23 15:31:41 by vtenigin          #+#    #+#             */
-/*   Updated: 2016/09/26 17:57:55 by vtenigin         ###   ########.fr       */
+/*   Created: 2016/09/26 17:29:47 by vtenigin          #+#    #+#             */
+/*   Updated: 2016/09/26 17:55:31 by vtenigin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+void	*ft_memalloc(size_t size)
 {
-	char	*tdst;
-	char	*tsrc;
-	size_t	i;
+	void *mem;
 
-	i = 0;
-	tdst = (char *)dst;
-	tsrc = (char *)src;
-	while (i < n)
+	if ((mem = malloc(size)) && size)
 	{
-		tdst[i] = tsrc[i];
-		i++;
+		ft_bzero(mem, size);
+		return (mem);
 	}
-	return ((void *)dst);
+	return (NULL);
 }

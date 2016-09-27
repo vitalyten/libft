@@ -6,9 +6,11 @@
 /*   By: vtenigin <vtenigin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/23 08:46:24 by vtenigin          #+#    #+#             */
-/*   Updated: 2016/09/23 08:48:23 by vtenigin         ###   ########.fr       */
+/*   Updated: 2016/09/26 17:54:43 by vtenigin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_isalpha(int c)
 {
