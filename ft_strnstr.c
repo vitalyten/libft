@@ -1,37 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vtenigin <vtenigin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/09/24 14:00:40 by vtenigin          #+#    #+#             */
-/*   Updated: 2016/09/27 16:15:08 by vtenigin         ###   ########.fr       */
+/*   Created: 2016/09/27 16:30:57 by vtenigin          #+#    #+#             */
+/*   Updated: 2016/09/27 17:18:14 by vtenigin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *str)
+char	*ft_strnstr(const char *s1, const char *s2, size_t n)
 {
-	int		res;
-	int		sign;
+	size_t	len;
 
-	res = 0;
-	sign = 1;
-	while (ft_iswhitespace(*str))
-		str++;
-	if (*str == '-')
+	if (*s2 == '\0')
+		return ((char *)s1);
+	len = ft_strlen(s2);
+	while (*s1 && n-- >= len)
 	{
-		sign = -1;
-		str++;
+		if (!(ft_memcmp(s1, s2, len)))
+			return ((char *)s1);
+		s1++;
 	}
-	else if (*str == '+')
-		str++;
-	while (ft_isdigit(*str))
-	{
-		res = res * 10 + *str - '0';
-		str++;
-	}
-	return (sign * res);
+	return (NULL);
 }

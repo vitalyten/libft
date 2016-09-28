@@ -1,37 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vtenigin <vtenigin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/09/24 14:00:40 by vtenigin          #+#    #+#             */
-/*   Updated: 2016/09/27 16:15:08 by vtenigin         ###   ########.fr       */
+/*   Created: 2016/09/27 09:48:25 by vtenigin          #+#    #+#             */
+/*   Updated: 2016/09/27 10:20:25 by vtenigin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <libft.h>
 
-int	ft_atoi(const char *str)
+char	*ft_strtrim(char const *s)
 {
-	int		res;
-	int		sign;
+	size_t	start;
+	size_t	end;
+	char	*ret;
 
-	res = 0;
-	sign = 1;
-	while (ft_iswhitespace(*str))
-		str++;
-	if (*str == '-')
-	{
-		sign = -1;
-		str++;
-	}
-	else if (*str == '+')
-		str++;
-	while (ft_isdigit(*str))
-	{
-		res = res * 10 + *str - '0';
-		str++;
-	}
-	return (sign * res);
+	start = 0;
+	end = ft_strlen(s);
+	while (ft_iswhitespace(s[start]))
+		start++;
+	while (ft_iswhitespace(s[end - 1]))
+		end--;
+	if (end < start)
+		end = start;
+	if (!(ret = ft_strnew(end - start)))
+		return (NULL);
+	return (ft_strncpy(ret, s + start, end - start));
 }
