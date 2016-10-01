@@ -6,58 +6,53 @@
 /*   By: vtenigin <vtenigin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/27 20:31:05 by vtenigin          #+#    #+#             */
-/*   Updated: 2016/09/29 19:41:06 by vtenigin         ###   ########.fr       */
+/*   Updated: 2016/09/30 21:16:24 by vtenigin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include "libft.h"
-#include <stdlib.h>
+#include "libft.h"
 
-static int	ft_getlen(int n, int base)
+static int		ft_getlen(int n, int base)
 {
 	int	len;
 
-	len = 0;
-	if (n <= 0)
-	{
+	len = 1;
+	if (n < 0)
 		len++;
-		n = -n;
-	}
-	while (n > 0)
-	{
-		n /= base;
+	while (n /= base)
 		len++;
-	}
 	return (len);
 }
 
-char		ft_getchar(int n)
+static char		ft_getchar(unsigned int n)
 {
-	char	*set = "0123456789ABCDEF";
+	char	*set;
+
+	set = "0123456789ABCDEF";
 	return (set[n]);
 }
 
-char		*ft_itoa_base(int value, int base)
+char			*ft_itoa_base(int value, int base)
 {
-	char	*res;
-	int		i;
+	char			*res;
+	int				i;
+	int				neg;
+	unsigned int	v;
 
-	if (value == 0)
-		return ("0");
-	i = ft_getlen(value, base);
-	if (!(res = (char *)malloc(sizeof(char) * (i + 1))))
+	i = 0;
+	neg = 0;
+	neg = (value < 0) ? 1 : 0;
+	v = (value < 0) ? (unsigned int)-value : (unsigned int)value;
+	if (!(res = ft_strnew(ft_getlen(value, base))))
 		return (NULL);
-	res[i] = '\0';
-	i--;
-	if (value < 0)
+	while (v)
 	{
-		res[0] = '-';
-		value = -value;
+		res[i++] = ft_getchar(v % base);
+		v /= base;
 	}
-	while (value > 0)
-	{
-		res[i--] = ft_getchar(value % base);
-		value /= base;
-	}
-	return (res);
+	if (neg)
+		res[i] = '-';
+	if (res[0] == 0)
+		res[0] = '0';
+	return (ft_strrev(res));
 }
