@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strtolower.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vtenigin <vtenigin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/09/29 14:54:17 by vtenigin          #+#    #+#             */
-/*   Updated: 2016/09/29 19:42:32 by vtenigin         ###   ########.fr       */
+/*   Created: 2016/10/01 19:21:04 by vtenigin          #+#    #+#             */
+/*   Updated: 2016/10/01 19:57:59 by vtenigin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
+#include "libft.h"
 
-char	*ft_itoa_base(int value, int base);
-
-int	main()
+char	*ft_strtolower(char *str)
 {
-	printf("%s\n", ft_itoa_base(-623, 10));
-	printf("%s\n", ft_itoa_base(-0, 10));
-	printf("%s\n", ft_itoa_base(156, 10));
-	printf("%s\n", ft_itoa_base((-2147483647 -1), 10));
-	printf("%s\n", itoa((-2147483647 -1)));
-	return (0);
+	char *tmp;
+
+	tmp = str;
+	while (*str)
+	{
+		*str = ft_tolower(*str);
+		str++;
+	}
+	return (tmp);
 }

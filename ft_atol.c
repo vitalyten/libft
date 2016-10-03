@@ -1,34 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_atol.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vtenigin <vtenigin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/09/27 18:20:33 by vtenigin          #+#    #+#             */
-/*   Updated: 2016/10/01 21:21:10 by vtenigin         ###   ########.fr       */
+/*   Created: 2016/09/24 14:00:40 by vtenigin          #+#    #+#             */
+/*   Updated: 2016/10/01 18:38:30 by vtenigin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dst, const char *src, size_t size)
+long	ft_atol(const char *str)
 {
-	size_t	i;
-	size_t	j;
-	size_t	res;
+	long	res;
+	long	sign;
 
-	i = 0;
-	j = 0;
-	res = ft_strlen(src);
-	while (dst[i] && i < size)
-		i++;
-	while (src[j] && i < size - 1)
-		dst[i++] = src[j++];
-	if (j > 0)
+	res = 0;
+	sign = 1;
+	while (ft_iswhitespace(*str))
+		str++;
+	if (*str == '-')
 	{
-		dst[i] = '\0';
-		return (res + i - j);
+		sign = -1;
+		str++;
 	}
-	return (res + i);
+	else if (*str == '+')
+		str++;
+	while (ft_isdigit(*str))
+	{
+		res = res * 10 + *str - '0';
+		str++;
+	}
+	return (sign * res);
 }

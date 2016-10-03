@@ -6,7 +6,7 @@
 /*   By: vtenigin <vtenigin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/27 14:34:48 by vtenigin          #+#    #+#             */
-/*   Updated: 2016/09/27 15:39:56 by vtenigin         ###   ########.fr       */
+/*   Updated: 2016/10/01 20:15:16 by vtenigin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 
 void	ft_putstr_fd(char const *s, int fd)
 {
-	while(*s)
+	while (*s)
 		ft_putchar_fd(*s++, fd);
 }
