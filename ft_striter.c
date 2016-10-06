@@ -6,7 +6,7 @@
 /*   By: vtenigin <vtenigin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/26 18:39:09 by vtenigin          #+#    #+#             */
-/*   Updated: 2016/09/26 18:40:24 by vtenigin         ###   ########.fr       */
+/*   Updated: 2016/10/04 21:44:37 by vtenigin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 void	ft_striter(char *s, void (*f)(char *))
 {
-	while (*s != '\0')
-		f(s++);
+	if (s && f)
+		while (*s != '\0')
+			f(s++);
 }

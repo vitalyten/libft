@@ -6,7 +6,7 @@
 #    By: vtenigin <vtenigin@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/09/24 15:47:15 by vtenigin          #+#    #+#              #
-#    Updated: 2016/10/01 20:05:39 by vtenigin         ###   ########.fr        #
+#    Updated: 2016/10/04 21:28:45 by vtenigin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ PATH_SRC = ./
 PATH_OBJ = ./
 
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror -Ofast -I ./includes/
+CFLAGS = -Wall -Wextra -Werror
 
 # ft_iswhitespace
 # ft_strrev

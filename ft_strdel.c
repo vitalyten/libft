@@ -6,7 +6,7 @@
 /*   By: vtenigin <vtenigin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/26 18:33:13 by vtenigin          #+#    #+#             */
-/*   Updated: 2016/09/26 18:34:39 by vtenigin         ###   ########.fr       */
+/*   Updated: 2016/10/04 22:19:55 by vtenigin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,6 @@
 
 void	ft_strdel(char **as)
 {
-	ft_memdel((void **)as);
+	if (as && *as)
+		ft_memdel((void **)as);
 }

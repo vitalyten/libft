@@ -6,7 +6,7 @@
 /*   By: vtenigin <vtenigin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/26 19:18:25 by vtenigin          #+#    #+#             */
-/*   Updated: 2016/09/26 19:25:49 by vtenigin         ###   ########.fr       */
+/*   Updated: 2016/10/04 21:49:00 by vtenigin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,15 +18,19 @@ char	*ft_strmap(char const *s, char (*f)(char))
 	int		len;
 	char	*ret;
 
-	len = ft_strlen(s);
-	if (!(ret = (char *)malloc(sizeof(char) * (len + 1))))
-		return (NULL);
-	i = 0;
-	while (i < len)
+	ret = NULL;
+	if (s && f)
 	{
-		ret[i] = f(s[i]);
-		i++;
+		len = ft_strlen(s);
+		if (!(ret = (char *)malloc(sizeof(char) * (len + 1))))
+			return (NULL);
+		i = 0;
+		while (i < len)
+		{
+			ret[i] = f(s[i]);
+			i++;
+		}
+		ret[i] = '\0';
 	}
-	ret[i] = '\0';
 	return (ret);
 }
